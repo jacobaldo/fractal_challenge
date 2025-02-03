@@ -5,6 +5,14 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "android:dev": " REACT_NATIVE_ENV=dev react-native run-android ",
+    "android:qa": " REACT_NATIVE_ENV=qa react-native run-android",
+    "android:prod": " REACT_NATIVE_ENV=prod react-native run-android ",
+    "ios:dev": " REACT_NATIVE_ENV=dev react-native run-ios ",
+    "ios:qa": " REACT_NATIVE_ENV=qa react-native run-ios ",
+    "ios:prod": " REACT_NATIVE_ENV=prod react-native run-ios ",
+    "android:prod-release": "cd android && ./gradlew assembleRelease",
+    "android:prod-release-bundle": "cd android && ./gradlew bundleRelease",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
@@ -12,9 +20,11 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.0",
     "@reduxjs/toolkit": "^2.5.1",
+    "@types/react-native-dotenv": "^0.2.2",
     "axios": "^1.7.9",
     "react": "18.3.1",
     "react-native": "0.77.0",
+    "react-native-dotenv": "^3.4.11",
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
@@ -28,6 +38,9 @@
     "@react-native/eslint-config": "0.77.0",
     "@react-native/metro-config": "0.77.0",
     "@react-native/typescript-config": "0.77.0",
+    "@testing-library/react-native": "^13.0.1",
+    "@types/redux-mock-store": "^1.5.0",
+    "redux-mock-store": "^1.5.5",
     "@types/jest": "^29.5.13",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",

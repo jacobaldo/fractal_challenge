@@ -1,32 +1,21 @@
 import React from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  RefreshControl,
-  SafeAreaView,
-  Text,
-  View,
-} from 'react-native';
+import {FlatList, RefreshControl, SafeAreaView} from 'react-native';
 import CardUser from '../../components/CardUser';
 import useHome from '../../hooks/useHome';
 import SearchBar from '../../components/Search';
-import Typography from '../../components/Typography';
 import {ListFooter} from '../../components/FooterList';
 import {EmptyList} from '../../components/EmptyList';
+import styles from './styles';
 const Home = () => {
   const {handleRefresh, handleLoadMore, filteredData, loading, noNextPages} =
     useHome();
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       <SearchBar />
-      {/* <Typography variant="title">title</Typography>
-      <Typography variant="subtitle">subtitle</Typography>
-      <Typography variant="body">body</Typography>
-      <Typography variant="caption">caption</Typography>
-      <Typography variant="small">small</Typography> */}
       <FlatList
-        style={{flex: 1}}
+        testID="flat-list"
+        style={styles.container}
         data={filteredData}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({item, index}) => {

@@ -3,8 +3,6 @@ import apiClient from '../../api/apiClient';
 import {AllPosts, Post} from './types';
 
 export const getPostsFromAPI = async (page: number): Promise<Post[]> => {
-  console.log('page', page);
-
   try {
     const response = await apiClient.get(`/users/${page}/posts`);
     return response.data;
