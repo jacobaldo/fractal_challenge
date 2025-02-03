@@ -5,7 +5,7 @@ import styles from './styles';
 
 export const EmptyList = () => {
   return (
-    <View style={styles.emptyList}>
+    <View testID="empty-list" style={styles.emptyList}>
       <Typography variant="subtitle">Lo sentímos</Typography>
       <Typography variant="body">No hay usuarios</Typography>
     </View>

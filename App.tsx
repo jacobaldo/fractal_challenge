@@ -20,7 +20,6 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     flex: 1,
   };
-
   return (
     <Provider store={store}>
       <SafeAreaView style={backgroundStyle}>

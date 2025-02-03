@@ -1,13 +1,13 @@
-/**
- * @format
- */
-
-import React from 'react';
-import ReactTestRenderer from 'react-test-renderer';
+import configureStore from 'redux-mock-store';
 import App from '../App';
+import renderWithStore from '../src/core/test-utils';
 
-test('renders correctly', async () => {
-  await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<App />);
+const mockStore = configureStore([]);
+
+describe('Counter Component', () => {
+  it('renders the counter value from Redux store', () => {
+    const store = mockStore({});
+
+    renderWithStore(store, App);
   });
 });
